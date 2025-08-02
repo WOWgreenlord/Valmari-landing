@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix",
+    "format": "prettier . --write",
+    "lint:fix": "npm run lint:css:fix ; npm run format"
   },
   "keywords": [],
   "author": "",
@@ -11,5 +14,10 @@
   "description": "",
   "dependencies": {
     "@a1rth/css-normalize": "^1.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "stylelint": "^16.23.0",
+    "stylelint-config-standard": "^39.0.0"
   }
 }
