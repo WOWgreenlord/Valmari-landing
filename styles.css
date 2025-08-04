@@ -114,14 +114,19 @@ button {
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: initial;
-}
-
 .burger-button {
   background-color: transparent;
   color: var(--ternary-color);
+}
+
+.registration-button {
+  background-color: var(--ternary-color);
+  color: var(--light-color);
+}
+
+a {
+  text-decoration: none;
+  color: initial;
 }
 
 .header__body {
@@ -225,26 +230,118 @@ a {
   color: var(--dark-light-color);
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  min-width: 17.88em;
+  min-height: 40em;
+  background-color: var(--light-color);
+}
+
+.modal__content {
+  padding: 1.25em 0 0 1.25em;
+  position: relative;
+}
+
+.modal__phone-number {
+  color: var(--dark-light-color);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 2.2;
+  align-items: center;
+  column-gap: clamp(0.75em, 1.875vw, 0.36em);
+}
+
+.modal__phone-number > svg {
+  color: var(--ternary-color);
+  min-width: 15px;
+  min-height: 15px;
+}
+
+.modal__language-select {
+  display: flex;
+  align-items: center;
+  column-gap: 0.88em;
+  background-color: initial;
+  margin-top: 1.25em;
+}
+
+.modal__language-select > img {
+  width: 28px;
+  aspect-ratio: 1;
+}
+
+.modal__language-select > svg {
+  color: var(--ternary-color);
+}
+
+.modal__nav-menu {
+  font-weight: 500;
+  font-size: var(--font-size-20);
+}
+
+.modal__nav-menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__nav-menu-link {
+  font-size: var(--font-size-20);
+  font-weight: 500;
+  color: var(--dark-light-color);
+}
+
+.modal__socials {
+  display: flex;
+  column-gap: 1.63em;
+  align-items: center;
+}
+
+.modal__socials > a {
+  color: var(--ternary-color);
+}
+
+.modal__close-button {
+  background-color: transparent;
+  position: absolute;
+  top: 27px;
+  left: 220px;
+}
+
+.modal__close-button > svg {
+  color: var(--ternary-color);
+}
+
+.free-webinar__subtitle {
+  font-size: clamp(0.625rem, 1.823vw, 1.25rem);
+  font-weight: 600;
+  color: var(--dark-light-color);
+}
+
+.free-webinar__title {
+  font-size: clamp(1.875rem, 5.21vw, 4.06rem);
+  font-weight: 700;
+  color: var(--ternary-color);
+  text-transform: uppercase;
+}
+
+.free-webinar__description {
+  font-size: clamp(0.625rem, 1.823vw, 1.25rem);
+  font-weight: 500;
+  color: var(--dark-light-color);
+}
+
 @media (width < 30rem) /*320px*/ {
-  .header__body-inner {
-    flex-direction: column;
+  .modal__nav-menu {
+    margin-top: 1.69em;
+    margin-bottom: 3.13em;
   }
 
-  .header__phone-number {
-    display: flex;
-  }
-
-  .nav-menu {
-    display: flex;
-  }
-
-  .nav-menu__list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-menu__link {
-    font-size: var(--font-size-20);
+  .modal__nav-menu-list {
+    row-gap: 0.94em;
   }
 }
 
@@ -264,6 +361,55 @@ a {
   .header__logo-link > svg {
     min-width: 46px;
     min-height: 46px;
+  }
+
+  .modal {
+    min-width: 23em;
+    min-height: 49.75em;
+  }
+
+  .modal__content {
+    padding: 2.19em 0 0 2.19em;
+    position: relative;
+  }
+
+  .modal__close-button {
+    top: 30px;
+    left: 310px;
+  }
+
+  .modal__close-button > svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .modal__nav-menu {
+    margin-top: 2.5em;
+    margin-bottom: 3em;
+  }
+
+  .modal__nav-menu-list {
+    row-gap: 1.5rem;
+  }
+
+  .modal__phone-number {
+    font-size: 1.375rem;
+    line-height: 1.18;
+  }
+
+  .modal__phone-number > svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .modal__language-select > img {
+    width: 41px;
+    aspect-ratio: 1;
+  }
+
+  .modal__socials > a > svg {
+    width: 32px;
+    height: 32px;
   }
 }
 
