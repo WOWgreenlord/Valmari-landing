@@ -77,6 +77,7 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .container {
@@ -123,6 +124,18 @@ button {
   background-color: var(--ternary-color);
   color: var(--light-color);
 }
+.know-more-button {
+  background-color: transparent;
+  color: var(--ternary-color);
+  border: 1px solid var(--ternary-color);
+}
+.small-button {
+  font-weight: 600;
+  padding-inline: clamp(1.4em, 3.3854vw, 2.22em);
+  min-width: clamp(8.82rem, 28.6458vw, 17.813rem);
+  min-height: clamp(1.875rem, 6vw, 4.125rem);
+  font-size: clamp(0.625rem, 1.953125vw, 1.125rem);
+}
 
 a {
   text-decoration: none;
@@ -131,7 +144,7 @@ a {
 
 .header__body {
   background-color: var(--light-color);
-  padding: var(--gap-10) var(--gap-10) 0 var(--gap-10);
+  padding: var(--gap-10);
 }
 
 .header__body-inner {
@@ -314,11 +327,30 @@ a {
 .modal__close-button > svg {
   color: var(--ternary-color);
 }
-
+.free-webinar {
+  background-color: #eef3ed;
+}
+.free-webinar__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+.free-webinar__wrapper + img {
+  margin-inline: auto;
+}
+.free-webinar__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.625em;
+  text-align: center;
+}
 .free-webinar__subtitle {
   font-size: clamp(0.625rem, 1.823vw, 1.25rem);
   font-weight: 600;
   color: var(--dark-light-color);
+  margin-top: 16px;
 }
 
 .free-webinar__title {
@@ -326,12 +358,15 @@ a {
   font-weight: 700;
   color: var(--ternary-color);
   text-transform: uppercase;
+  line-height: 0.93;
 }
 
 .free-webinar__description {
   font-size: clamp(0.625rem, 1.823vw, 1.25rem);
   font-weight: 500;
   color: var(--dark-light-color);
+  line-height: 1.2;
+  max-width: clamp(20.2em, 38.151vw, 20.95em);
 }
 
 @media (width < 30rem) /*320px*/ {
@@ -432,6 +467,9 @@ a {
     min-height: 23px;
     min-width: 23px;
   }
+  .free-webinar__subtitle {
+    display: none;
+  }
 }
 
 @media (width >= 62.5rem) /*1000px*/ {
@@ -490,5 +528,8 @@ a {
 
   .header__phone-number {
     margin-left: 15em;
+  }
+  .free-webinar__subtitle {
+    display: block;
   }
 }
