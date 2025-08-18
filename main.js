@@ -1,6 +1,7 @@
 let burgerBtn = document.querySelector(".burger-button");
 let modalCloseBtn = document.querySelector(".modal__close-button");
 let modalWindow = document.querySelector(".modal");
+let learningPic = document.querySelector('.learning-center__image');
 
 burgerBtn.addEventListener("click", () => {
   modalWindow.style.display = "block";
@@ -14,6 +15,8 @@ function widthResizer() {
     modalWindow.style.display = "none";
   }
 }
+
+
 
 // Запускаем при загрузке и изменении размера
 window.addEventListener("resize", widthResizer);
