@@ -39,7 +39,6 @@
 }
 
 :root {
-
   --dark-color: #000;
 
   --dark-light-color: #424242;
@@ -88,6 +87,8 @@ body {
   max-width: calc(var(--container-width) + var(--container-padding) * 2);
   margin-inline: auto;
   padding-inline: var(--container-padding);
+
+  /* background-color: tomato; */
 }
 
 .visually-hidden {
@@ -109,8 +110,8 @@ svg path[fill="white"] {
 p {
   line-height: 1.6;
   font-weight: 400;
+  font-size: clamp(0.938rem, 2.604vw, 1.563rem);
   letter-spacing: 0;
-  font-size: 0.625rem;
   color: var(--dark-light-color);
 }
 
@@ -126,6 +127,7 @@ h4,
 h5,
 h6 {
   color: var(--dark-light-color);
+  font-size: clamp(var(--font-size-20), 3.255vw, 2.1875rem);
   font-weight: 600;
 }
 
@@ -134,15 +136,41 @@ h6 {
   color: var(--ternary-color);
 }
 
-.registration-button {
+.main-button {
   background-color: var(--ternary-color);
   color: var(--light-color);
+  transition: background, var(--transition-duration);
+}
+
+.main-button:hover {
+  background-color: #238535;
+}
+
+.main-button.persian-green:hover {
+  background-color: #008a7c;
+}
+
+.main-button.iris:hover {
+  background-color: #383590;
 }
 
 .know-more-button {
   background-color: transparent;
   color: var(--ternary-color);
   border: 1px solid var(--ternary-color);
+  transition: background, var(--transition-duration);
+}
+
+.know-more-button:hover {
+  background-color: #dbf8d9;
+}
+
+.know-more-button.iris:hover {
+  background-color: #2c2a9528;
+}
+
+.know-more-button.persian-green:hover {
+  background-color: #00a89729;
 }
 
 .small-button {
@@ -159,6 +187,30 @@ h6 {
 
 .opacity-high {
   opacity: 80%;
+}
+
+.padding-small {
+  padding-inline: 0.1875rem;
+}
+
+.section-margin {
+  margin-block: clamp(5rem, 13.021vw, 10.9375rem);
+}
+
+.centered-title {
+  text-align: center;
+}
+
+.title-bottom-margin {
+  margin-bottom: clamp(2.5rem, 6.51vw, 4.6875rem);
+}
+
+.learning-cosmetology_absolute {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: scaleX(-1);
 }
 
 a {
@@ -265,6 +317,13 @@ a {
 .nav-menu__link {
   font-weight: 500;
   color: var(--dark-light-color);
+  display: inline-block;
+  margin: 0;
+  transition: color, var(--transition-duration);
+}
+
+.nav-menu__link:hover {
+  color: var(--ternary-color);
 }
 
 .modal {
@@ -329,6 +388,11 @@ a {
   font-size: var(--font-size-20);
   font-weight: 500;
   color: var(--dark-light-color);
+  transition: color, var(--transition-duration);
+}
+
+.modal__nav-menu-link:hover {
+  color: var(--ternary-color);
 }
 
 .modal__socials {
@@ -358,6 +422,7 @@ a {
   background-position: 50% 100%;
   padding-bottom: 12.5em;
   position: relative;
+  margin-bottom: clamp(11.25rem, 26.042vw, 17.1875rem);
 }
 
 .free-webinar__main {
@@ -440,24 +505,16 @@ a {
   text-align: start;
 }
 
-.closest-learning {
-  margin-top: 200px;
-}
-
 .closest-learning__main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.closest-learning__title {
-  font-size: clamp(var(--font-size-20), 2.6vw, 2.2rem);
-  margin-bottom: clamp(2.5rem, 7.5vw, 4.8125rem);
-}
-
 .slider {
   width: 100%;
-  overflow: hidden;
+
+  /* overflow: hidden; */
 }
 
 .slider__body {
@@ -465,6 +522,14 @@ a {
   justify-content: center;
   align-items: center;
   column-gap: clamp(var(--font-size-20), 3.25vw, 3.75rem);
+}
+
+.slider__image {
+  width: clamp(194px, 26.171875vw, 380px);
+  aspect-ratio: 1;
+  max-width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .slider__card {
@@ -560,7 +625,7 @@ a {
   background-color: var(--secondary-color);
 }
 
-.registration-button.persian-green {
+.main-button.persian-green {
   background-color: var(--secondary-color);
 }
 
@@ -581,7 +646,7 @@ a {
   background-color: #5351c4;
 }
 
-.registration-button.iris {
+.main-button.iris {
   background-color: #5351c4;
 }
 
@@ -615,9 +680,7 @@ a {
 .learning-center__main {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
   text-align: center;
-  margin-block: clamp(4.375rem, 10vw, 10.9375rem);
 }
 
 .learning-center__wrapper {
@@ -633,7 +696,6 @@ a {
 }
 
 .learning-center__title {
-  font-size: clamp(var(--font-size-20), 3.2552vw, 2.1875rem);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -644,7 +706,7 @@ a {
 
 .learning-center__description {
   font-size: clamp(0.9375rem, 2vw, 1.5625rem);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
   margin-block: 2.5rem;
 }
@@ -653,9 +715,10 @@ a {
   order: 1;
   min-width: 300px;
   height: 154px;
+  margin-inline: auto;
 }
 
-.learning-center__image {
+.fullsize-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -673,8 +736,368 @@ a {
   order: 2;
 }
 
-@media (width < 30rem) /*320px*/ {
+.learning-cosmetology__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--font-size-16);
+}
 
+.learning-cosmetology__item {
+  min-height: 7rem;
+  max-height: 16.25rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.learning-cosmetology__link {
+  font-size: clamp(0.875rem, 2.604vw, 2rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--light-color);
+  width: 100%;
+  height: 100%;
+  padding: 0.9375rem;
+  display: flex;
+  align-items: end;
+  position: relative;
+}
+
+.link-content {
+  display: block;
+  transition: transform var(--transition-duration) ease;
+}
+
+.learning-cosmetology__link:hover .link-content {
+  transform: translateY(-100%);
+}
+
+.cosmetology-courses {
+  background-image:
+    linear-gradient(rgb(35 35 35 / 50%), rgb(35 35 35 / 50%)),
+    url("./images/cosmetology-courses.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 63%;
+  grid-column: 1 / 3;
+}
+
+.online-learning {
+  background-image:
+    linear-gradient(rgb(35 35 35 / 50%), rgb(35 35 35 / 50%)),
+    url("./images/online-learning.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  grid-column: 1 / 3;
+}
+
+.master-class {
+  background-image:
+    linear-gradient(rgb(35 35 35 / 50%), rgb(35 35 35 / 50%)),
+    url("./images/master-class.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+}
+
+.schedule-background {
+  background-image:
+    linear-gradient(rgb(35 35 35 / 50%), rgb(35 35 35 / 50%)),
+    url("./images/schedule.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.specials {
+  grid-column: 1 / 3;
+}
+
+.specials-background {
+  background-image:
+    linear-gradient(rgb(35 35 35 / 50%), rgb(35 35 35 / 50%)),
+    url("./images/specials.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.recruiting-models__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+
+.recruiting-models__wrapper {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(2.5rem, 5vw, 4.688rem);
+}
+
+.recruiting-models__title {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ternary-color);
+}
+
+.recruiting-models__description {
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.recruiting-models__button {
+  font-size: clamp(0.938rem, 2vw, 1.438rem);
+  min-width: clamp(12.5rem, 30vw, 24.063rem);
+  min-height: clamp(2.5rem, 5.5vw, 4.688rem);
+  font-weight: 600;
+}
+
+.recruiting-models__image-wrapper {
+  max-height: 9.625rem;
+}
+
+.recruiting-models__image {
+  display: inline;
+}
+
+.master-classes__subtitle {
+  line-height: 1.1;
+  margin: 1.25rem 0 2.5rem;
+}
+
+.master-slider__body {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1.875rem;
+}
+
+.master-slider__card {
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.master-slider__card-body {
+  display: grid;
+  grid-template-columns: 70% auto;
+  grid-template-rows: 2fr 1fr;
+  align-items: stretch;
+  height: 100%;
+}
+
+.master-slider__content {
+  padding: 0.625rem;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.875rem;
+}
+
+.master-slider__date {
+  font-size: clamp(0.75rem, 1.6vw, 1rem);
+  font-weight: 500;
+}
+
+.master-slider__description {
+  font-size: clamp(0.938rem, 2vw, 1.563rem);
+  font-weight: 600;
+  line-height: 1.06;
+}
+
+.master-slider__trainers {
+  font-size: clamp(0.75rem, 1.6vw, 1rem);
+  line-height: 1;
+}
+
+.master-slider__price {
+  font-weight: 600;
+  font-size: clamp(0.75rem, 1.6vw, 1rem);
+  background-color: var(--about-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.master-slider__img {
+  max-height: 9.375rem;
+}
+
+.why-us__card-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  align-items: stretch;
+}
+
+.why-us__card {
+  min-height: 14.6875rem;
+  width: 100%;
+  height: 100%;
+  padding: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+}
+
+.why-us__card:nth-child(even) {
+  background-color: var(--ternary-light-color);
+}
+
+.backdrop-title[data-title="02"]::after {
+  color: var(--light-color);
+  opacity: 30%;
+}
+
+.why-us__card-title {
+  font-size: clamp(0.9375rem, 2vw, 1.5625rem);
+}
+
+.backdrop-title {
+  position: relative;
+  z-index: 2;
+}
+
+.why-us__card-description {
+  line-height: 1.2;
+}
+
+.backdrop-title::after {
+  content: attr(data-title);
+  position: absolute;
+  z-index: -1;
+  left: 2.4em;
+  top: -0.1em;
+  font-size: 3.125rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ternary-color);
+  opacity: 40%;
+  letter-spacing: -5px;
+}
+
+/* .call-back__main {
+  box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+} */
+
+.call-back__wrapper {
+  padding: 32px;
+  box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+}
+
+.call-back__title {
+  margin-bottom: 20px;
+  color: var(--ternary-color);
+}
+
+.call-back__subtitle {
+  margin-bottom: 36px;
+}
+
+.call-back__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.call-back__input {
+  width: calc(100% - 10px);
+  margin-inline: 5px;
+  margin-bottom: 10px;
+  min-height: 45px;
+  padding-inline: 30px;
+  border: 1px solid var(--ternary-color);
+  color: #9c9c9c;
+}
+
+.call-back__submit-button {
+  margin-top: 10px;
+  width: calc(100% - 10px);
+  margin-inline: 5px;
+  min-height: 50px;
+  font-weight: 600;
+}
+
+.footer {
+  background-color: var(--dark-light-color);
+}
+
+.footer__body-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__logo-link {
+  margin-block: 1.25rem;
+}
+
+.footer__tel {
+  font-weight: 700;
+}
+
+.footer__address {
+  font-weight: 500;
+}
+
+.footer__navigation {
+  margin-block: 1.5625rem;
+}
+
+.footer__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  font-size: clamp(0.75rem, 1.6vw, 1rem);
+  color: var(--light-color);
+  font-weight: 500;
+}
+
+.footer__privacy-policy {
+  color: var(--light-color);
+}
+
+.footer__tel,
+.footer__address {
+  text-align: center;
+  color: var(--light-color);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 25px;
+}
+
+.footer__privacy-policy {
+  margin-bottom: 15px;
+}
+
+.footer__map {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+@media (width < 30rem) /*320px*/ {
   .modal__nav-menu {
     margin-top: 1.69em;
     margin-bottom: 3.13em;
@@ -686,9 +1109,7 @@ a {
 }
 
 @media (width >= 30rem) /*480px*/ {
-
   :root {
-
     --container-width: clamp(22.6875em, 75.625vw, 35em);
   }
 
@@ -789,7 +1210,7 @@ a {
   }
 
   .statistics_absolute {
-    bottom: 25px;
+    bottom: 1.5625rem;
   }
 
   .statistics__card {
@@ -823,19 +1244,39 @@ a {
     width: 354px;
     height: 167px;
   }
+
+  .learning-cosmetology__list {
+    gap: 1.3125rem;
+  }
+
+  .learning-cosmetology__item {
+    min-height: 9.1875rem;
+  }
+
+  .recruiting-models__description {
+    text-align: start;
+  }
+
+  .why-us__card {
+    align-items: start;
+    padding-left: 6.6875rem;
+  }
+
+  .backdrop-title::after {
+    font-size: 9rem;
+    left: 0.1em;
+    top: 0.3em;
+  }
 }
 
 @media (width >= 41.25rem) {
-
   .statistics_absolute {
     bottom: 15px;
   }
 }
 
 @media (width >= 48rem) /*768px*/ {
-
   :root {
-
     --container-width: clamp(40.25em, 83.464vw, 65em);
   }
 
@@ -894,13 +1335,15 @@ a {
   }
 
   .learning-center__main {
-    grid-template-columns: auto 1fr;
-    grid-template-rows: 0.5fr auto;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
     column-gap: 1.6875rem;
+    align-items: start;
   }
 
   .learning-center__image-wrapper {
-    grid-row: 1 / 3;
+    grid-column: 1;
+    grid-row: 1 / span 2;
     width: 276px;
     height: 408px;
     order: 0;
@@ -909,19 +1352,118 @@ a {
   .learning-center__image {
     aspect-ratio: 0.6;
   }
+
+  .learning-center__wrapper {
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
+  }
+
+  .learning-center__link {
+    grid-column: 2;
+    grid-row: 2;
+    height: 100%;
+  }
+
+  .learning-cosmetology__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "cosmetology-courses cosmetology-courses cosmetology-courses online-learning online-learning online-learning"
+      "master-class master-class schedule schedule specials specials";
+    grid-auto-columns: minmax(auto, 1fr);
+  }
+
+  .cosmetology-courses {
+    grid-area: cosmetology-courses;
+    min-width: 300px;
+  }
+
+  .online-learning {
+    grid-area: online-learning;
+    min-width: 300px;
+  }
+
+  .master-class {
+    grid-area: master-class;
+    min-width: 200px;
+  }
+
+  .schedule {
+    grid-area: schedule;
+    min-width: 200px;
+  }
+
+  .specials {
+    grid-area: specials;
+    min-width: 200px;
+  }
+
+  .recruiting-models__main {
+    flex-direction: row;
+    column-gap: 4.688rem;
+  }
+
+  .recruiting-models__wrapper {
+    align-items: start;
+    text-align: start;
+  }
+
+  .recruiting-models__title {
+    text-wrap: nowrap;
+  }
+
+  .recruiting-models__description {
+    line-height: 1.3;
+  }
+
+  .recruiting-models__image-wrapper {
+    max-height: initial;
+  }
+
+  .recruiting-models__image {
+    max-height: auto;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  .master-slider__body {
+    flex-direction: row;
+    column-gap: clamp(var(--font-size-20), 7vw, 10rem);
+  }
+
+  .why-us__card {
+    align-items: start;
+    padding-left: 12.5rem;
+    padding-block: 0.3125rem;
+  }
+
+  .backdrop-title::after {
+    font-size: 10.625rem;
+    left: 0.1em;
+    top: 0.3em;
+  }
+
+  /* .slider__image {
+    width: 201px;
+    aspect-ratio: 1;
+  } */
+
+  .call-back__wrapper {
+    padding-inline: 132px;
+  }
 }
 
 @media (width >= 60.88rem) {
-
   .statistics_absolute {
     bottom: -11px;
   }
 }
 
 @media (width >= 62.5rem) /*1000px*/ {
-
   :root {
-
     --container-width: 60em;
   }
 
@@ -1011,12 +1553,86 @@ a {
   .learning-center__image {
     aspect-ratio: 0.7;
   }
+
+  .learning-cosmetology__list {
+    gap: 1.875rem;
+  }
+
+  .learning-cosmetology__item {
+    min-height: 12.9375rem;
+  }
+
+  .self-start {
+    align-items: start;
+  }
+
+  .learning-cosmetology__link.self-start:hover .link-content {
+    transform: translateY(100%);
+  }
+
+  .master-slider__img {
+    max-height: 13.937rem;
+  }
+
+  .master-slider__content {
+    row-gap: 1.5rem;
+  }
+
+  .master-classes__subtitle {
+    margin: 40px 0 70px;
+  }
+
+  .why-us__card-wrapper {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    column-gap: 0.9375rem;
+  }
+
+  .why-us__card {
+    max-width: 300px;
+    max-height: 253px;
+    height: 100%;
+
+    /* padding: 45px 15px 65px 15px; */
+    padding: 45px 5px 25px;
+    width: 100%;
+    justify-content: initial;
+  }
+
+  .why-us__card-description {
+    font-size: 0.9375rem;
+  }
+
+  .why-us__card-title {
+    font-size: var(--font-size-20);
+  }
+
+  .backdrop-title::after {
+    left: 0.5em;
+    top: 0.4em;
+  }
+
+  /* .slider__image {
+    width: 303px;
+    aspect-ratio: 1;
+  } */
+
+  .call-back__wrapper {
+    padding-inline: 254px;
+  }
+
+  .call-back__input {
+    min-height: 60px;
+  }
+
+  .call-back__submit-button {
+    min-height: 70px;
+  }
 }
 
 @media (width >= 90rem) /*1440px*/ {
-
   :root {
-
     --container-width: 75em;
   }
 
@@ -1102,5 +1718,28 @@ a {
 
   .learning-center__image {
     aspect-ratio: 0.88;
+  }
+
+  .learning-cosmetology__list {
+    gap: 3.4375rem;
+  }
+
+  .learning-cosmetology__item {
+    min-height: 16.25rem;
+  }
+
+  .why-us__card {
+    max-width: 382px;
+    max-height: 315px;
+  }
+
+  /* .slider__image {
+    width: 380px;
+    aspect-ratio: 1;
+  } */
+
+  .call-back__wrapper {
+    padding-inline: 335px;
+    padding-block: 75px;
   }
 }
